@@ -42,7 +42,7 @@ resource "docker_container" "jupyter" {
   }
   volumes {
     container_path = "/home/jovyan/work"
-    host_path      = "C:/terraform-docker/workspace"
+    host_path      = "C:\dev\CaioSathler\_devops\devops-uc1-aula5\notebooks"
   }
   networks_advanced {
     name = docker_network.analysis_network.name
