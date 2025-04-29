@@ -16,3 +16,9 @@ variable "db_name" {
   type        = string
   default     = "analytics"
 }
+
+variable "jupyter_password" {
+  description = "Senha de acesso ao Jupyter"
+  type        = string
+  default     = "jupyter123"
+}

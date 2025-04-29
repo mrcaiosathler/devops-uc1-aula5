@@ -36,6 +36,10 @@ resource "docker_container" "postgres" {
 resource "docker_container" "jupyter" {
   name  = "jupyter_notebook"
   image = "jupyter/datascience-notebook:latest"
+  env = [
+    "JUPYTER_TOKEN=${var.jupyter_password}", 
+    "JUPYTER_ENABLE_LAB=yes"
+  ]
   ports {
     internal = 8888
     external = 8888
