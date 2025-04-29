@@ -42,7 +42,20 @@ resource "docker_container" "jupyter" {
   }
   volumes {
     container_path = "/home/jovyan/work"
-    host_path      = "C:\dev\CaioSathler\_devops\devops-uc1-aula5\notebooks"
+    host_path      = "C:/dev/CaioSathler/_devops/devops-uc1-aula5/notebooks"
+  }
+  networks_advanced {
+    name = docker_network.analysis_network.name
+  }
+}
+
+#Adminer
+resource "docker_container" "adminer" {
+  name  = "adminer"
+  image = "adminer:latest"
+  ports {
+    internal = 8080
+    external = 8080
   }
   networks_advanced {
     name = docker_network.analysis_network.name
